@@ -1,5 +1,8 @@
 - name: Update and Upgrade Packages
   hosts: all
+  become: true
+  vars:
+    ansible_python_interpreter: auto_silent
   tasks:
     - name: Update repositories
       apt:
