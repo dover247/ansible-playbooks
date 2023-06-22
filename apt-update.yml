@@ -26,9 +26,3 @@
     - name: Clear apt cache (again)
       apt:
         autoclean: yes
-
-    - name: Clear apt cache (final cleanup)
-      shell: sudo apt-get clean
-
-    - name: Clear temporary files
-      shell: rm -rf /tmp/*
