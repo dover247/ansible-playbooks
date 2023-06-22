@@ -22,7 +22,3 @@
       apt:
         name: "*"
         state: autoremove
-
-    - name: Clear apt cache (again)
-      apt:
-        autoclean: yes
