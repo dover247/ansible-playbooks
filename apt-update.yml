@@ -28,7 +28,7 @@
         autoclean: yes
 
     - name: Clear apt cache (final cleanup)
-      shell: apt-get clean
+      shell: sudo apt-get clean
 
     - name: Clear temporary files
       shell: rm -rf /tmp/*
