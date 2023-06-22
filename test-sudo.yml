@@ -1,5 +1,5 @@
 - name: Test Sudo Privileges
-  hosts: your_target_hosts
+  hosts: all
   gather_facts: false
   become: true
 
