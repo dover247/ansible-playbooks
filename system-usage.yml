@@ -11,10 +11,6 @@
       command: free -h
       register: memory_usage_output
 
-    - name: Display CPU usage
-      command: top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}'
-      register: cpu_usage_output
-
     - name: Display system load
       command: uptime
       register: system_load_output
@@ -29,6 +25,5 @@
       loop:
         - "{{ disk_usage_output }}"
         - "{{ memory_usage_output }}"
-        - "{{ cpu_usage_output }}"
         - "{{ system_load_output }}"
         - "{{ disk_capacities_output }}"
