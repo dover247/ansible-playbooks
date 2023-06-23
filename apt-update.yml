@@ -11,35 +11,28 @@
     - name: Update repositories
       apt:
         update_cache: yes
-      become: true
 
     - name: Upgrade packages
       apt:
         upgrade: safe
         autoclean: yes
         autoremove: yes
-      become: true
 
     - name: Clear apt cache
       apt:
         autoclean: yes
-      become: true
 
     - name: Remove unused packages
       apt:
         name: "*"
         state: autoremove
-      become: true
 
     - name: Clear apt cache (again)
       apt:
         autoclean: yes
-      become: true
 
     - name: Clear apt cache (final cleanup)
       shell: apt-get clean
-      become: true
 
     - name: Clear temporary files
       shell: rm -rf /tmp/*
-      become: true
