@@ -1,0 +1,34 @@
+- name: Display System Usage and Capacities
+  hosts: all
+  gather_facts: true
+  become: true
+  tasks:
+    - name: Display disk usage
+      command: df -h
+      register: disk_usage_output
+
+    - name: Display memory usage
+      command: free -h
+      register: memory_usage_output
+
+    - name: Display CPU usage
+      command: top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}'
+      register: cpu_usage_output
+
+    - name: Display system load
+      command: uptime
+      register: system_load_output
+
+    - name: Display disk capacities
+      command: fdisk -l
+      register: disk_capacities_output
+
+    - name: Display system usage and capacities
+      debug:
+        var: item.stdout_lines
+      loop:
+        - "{{ disk_usage_output }}"
+        - "{{ memory_usage_output }}"
+        - "{{ cpu_usage_output }}"
+        - "{{ system_load_output }}"
+        - "{{ disk_capacities_output }}"
