@@ -21,7 +21,7 @@
     - name: Remove unused packages
       apt:
         name: "*"
-        state: autoremove
+        state: absent
 
     - name: Clear apt cache (again)
       apt:
