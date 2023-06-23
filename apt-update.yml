@@ -4,6 +4,10 @@
   vars:
     ansible_python_interpreter: auto_silent
   tasks:
+    - name: Print current user
+      debug:
+        msg: "Current user: {{ ansible_user }}"
+      
     - name: Update repositories
       apt:
         update_cache: yes
