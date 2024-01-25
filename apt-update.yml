@@ -1,8 +1,10 @@
 - name: Update and Upgrade Packages
   tasks:
-    - name: Update apt repo and upgrade packages
-      shell: |
-        sudo apt get update -y
-        sudo apt get upgrade -y
+    - name: Updating Package Repository
+      command: sudo apt get update -y
+      
+    - name: Upgrading packages
+      command: sudo apt get upgrade -y
+      
     - name: Reboot the system in 1 minute
-      shell: sudo shutdown -r +1 "Rebooting in 1 minute due to system upgrade"
+      command: sudo shutdown -r +1 "Rebooting in 1 minute due to system upgrade"
