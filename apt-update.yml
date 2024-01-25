@@ -1,4 +1,5 @@
 - name: Update and Upgrade Packages
+  hosts: all
   tasks:
     - name: Updating Package Repository
       command: sudo apt get update -y
