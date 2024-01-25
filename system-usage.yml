@@ -1,22 +1,21 @@
 - name: Display System Usage and Capacities
   hosts: all
   gather_facts: true
-  become: true
   tasks:
     - name: Display disk usage
-      command: df -h
+      command: sudo df -h
       register: disk_usage_output
 
     - name: Display memory usage
-      command: free -h
+      command: sudo free -h
       register: memory_usage_output
 
     - name: Display system load
-      command: uptime
+      command: sudo uptime
       register: system_load_output
 
     - name: Display disk capacities
-      command: fdisk -l
+      command: sudo fdisk -l
       register: disk_capacities_output
 
     - name: Display system usage and capacities
