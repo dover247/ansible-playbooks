@@ -2,10 +2,10 @@
   hosts: all
   tasks:
     - name: Updating Package Repository
-      command: sudo apt get update -y
+      command: sudo apt-get update -y
       
     - name: Upgrading packages
-      command: sudo apt get upgrade -y
+      command: sudo apt-get upgrade -y
       
     - name: Reboot the system in 1 minute
       command: sudo shutdown -r +1 "Rebooting in 1 minute due to system upgrade"
