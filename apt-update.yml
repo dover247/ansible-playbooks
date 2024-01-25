@@ -3,8 +3,8 @@
   tasks:
     - name: Update all packages
       ansible.builtin.shell:
-        command: sudo apt-get update
+        command: sudo apt update
 
     - name: Upgrade all packages
       ansible.builtin.shell:
-        command: sudo apt-get upgrade -y
+        command: sudo apt upgrade -y
