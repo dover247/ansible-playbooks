@@ -1,10 +1,8 @@
 - name: Update and Upgrade Packages
-  hosts: all
   tasks:
-    - name: Update all packages
-      ansible.builtin.shell:
-        command: sudo apt update -y
-
-    - name: Upgrade all packages
-      ansible.builtin.shell:
-        command: sudo apt upgrade -y
+    - name: Update apt repo and upgrade packages
+      shell: |
+        sudo apt get update -y
+        sudo apt get upgrade -y
+    - name: Reboot the system in 1 minute
+      shell: sudo shutdown -r +1 "Rebooting in 1 minute due to system upgrade"
