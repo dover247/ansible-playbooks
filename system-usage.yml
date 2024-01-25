@@ -1,6 +1,5 @@
 - name: Display System Usage and Capacities
   hosts: all
-  gather_facts: true
   tasks:
     - name: Display disk usage
       command: sudo df -h
